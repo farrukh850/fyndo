@@ -1,6 +1,6 @@
 @font-face {
-    font-family: 'STK';
-    src: url('/Fonts/STK/STK-Sans-Regular.woff2') format('woff2');
+    font-family: "STK Bureau STK Bureau";
+    src: url('/Fonts/STK/STKSansRegular.woff2') format('woff2');
     font-weight: 400;
     font-style: normal;
     font-display: swap;
@@ -29,7 +29,7 @@
 
 @import "tailwindcss";
 .font-stk {
-    font-family: 'STK';
+    font-family: "STK Bureau STK Bureau";
 }
 .font-abaliss {
     font-family: 'Abaliss';
@@ -37,5 +37,9 @@
 .container{
     max-width: 1336px;
     margin: 0 auto;
-    padding: 0 16px;
+}
+@media (max-width: 992px)  {
+    .container{
+        padding: 0 16px;
+    }
 }

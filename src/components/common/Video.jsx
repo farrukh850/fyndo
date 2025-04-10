@@ -24,7 +24,7 @@ function Video({ thumbnailUrl, videoId, duration }) {
             /> */}
 
             {/* Play Button (Bottom Right) */}
-            <div className="absolute bottom-4 right-4 bg-white rounded-full h-12 w-12 flex items-center justify-center group-hover:bg-red-600 transition-colors z-50">
+            <div className="absolute bottom-[74px] right-[53px] bg-white rounded-full h-12 w-12 flex items-center justify-center group-hover:bg-red-600 transition-colors z-50">
                 <img src="/images/play-btn.svg" alt="Play Button" />
             </div>
 

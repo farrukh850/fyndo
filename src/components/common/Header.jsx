@@ -23,7 +23,7 @@ const Header = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
   return (
-    <header className={`header h-[60px] flex items-center fixed top-0 right-0 left-0 z-[1000] px-5 w-full bg-[#191919] font-stk`}>
+    <header className={`header h-[60px] flex items-center px-5 w-full bg-[#191919] border-b border-[#191919] font-stk`}>
       <nav className="container flex justify-between items-center">
         <Link to="/">
           <img src="/images/logo.svg" className="w-14" alt="LEAP Logo" />
@@ -40,7 +40,7 @@ const Header = () => {
           <NavLink to="/" className="text-sm text-white/60 tracking-[-0.14px]" > Fyndo</NavLink>
           <NavLink to="/" className="text-sm text-white/60 tracking-[-0.14px]" > FaQ</NavLink>
           <NavLink to="/" className="text-sm text-white/60 tracking-[-0.14px]" > Support</NavLink>
-          <Link className="w-[114px] h-[36px] rounded-[160px] bg-white cursor-pointer flex items-center justify-center"><p className="text-base text-[#292929]">Pick a Plan</p></Link>
+          <Link className="w-[114px] h-[36px] rounded-[160px] bg-white cursor-pointer flex items-center justify-center"><p className="text-sm text-[#292929]">Pick a Plan</p></Link>
         </div>
 
         {/* Mobile Hamburger Button */}
