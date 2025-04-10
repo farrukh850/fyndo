@@ -1,0 +1,5 @@
+# Example .gitignore for React/Next.js
+node_modules/
+.next/
+.env
+.DS_Store
