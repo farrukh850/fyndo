@@ -62,7 +62,7 @@ function Video({ thumbnailUrl, videoId, duration }) {
             </button>
 
             {/* YouTube Iframe */}
-            <div className="w-full h-16">
+            <div className="w-full h-full">
             <iframe
                 src={`https://www.youtube.com/embed/${videoId}?autoplay=1`}
                 className="w-full h-[500px] rounded-lg"
