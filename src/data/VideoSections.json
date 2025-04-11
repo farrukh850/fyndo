@@ -8,7 +8,8 @@
         "videoSubHeading": "Before You Dive In.", 
         "VideoPara": "Your idea, your project— Every quote you get is different. So, what’s the real number? The reality? A staggering 70% of projects suffer from scope creep, while only 30% are delivered on time, within budget. Gain clarity with our Estimation Package—before you commit.", 
         "VideoDeliveryTime": "Delivery in 72 hours", 
-        "VideoCost": "€ 599"
+        "VideoCost": "€ 599",
+        "videoSrc": "/videos/v7-video2.mp4"
     },
     {
         "bgColor": "#131313",
@@ -19,6 +20,7 @@
         "videoSubHeading": "Let Us Screen for You.", 
         "VideoPara": "You’ve got estimates and quotes—but who’s the right fit? With countless agencies and developers offering different stacks, it’s overwhelming. Who has real skills, not just a great pitch? Our Screening Package cuts through the noise, helping you choose with confidence.", 
         "VideoDeliveryTime": "Screening Next day", 
-        "VideoCost": "€ 999"
+        "VideoCost": "€ 999",
+        "videoSrc": "/videos/v7-video3.mp4"
     }
   ]

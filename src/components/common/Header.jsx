@@ -23,7 +23,7 @@ const Header = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
   return (
-    <header className={`header h-[60px] fixed top-0 right-0 left-0 flex items-center px-5 w-full bg-[#191919] border-b border-[#191919] font-stk`}>
+    <header className={`header h-[60px] fixed top-0 right-0 left-0 flex items-center px-5 w-full bg-[#191919] border-b border-[#191919] font-stk z-[1000]`}>
       <nav className="container flex justify-between items-center">
         <Link to="/">
           <img src="/images/logo.svg" className="w-14" alt="LEAP Logo" />

@@ -12,17 +12,17 @@ function FAQ() {
     <div className="py-28">
         <div className="container">
             <div className="flex items-start font-stk flex-col lg:flex-row gap-4 lg:gap-0">
-                    <div className="flex items-center flex-[20%] gap-3 pt-4 relative z-50">
-                            <span className={`h-2 w-2 rounded-full bg-[#292929]`}></span>
-                            <p className={`text-sm leading-3.5 text-[#131313]`}>FAQ</p>
-                    </div>
-                    <div className="flex flex-col gap-7 flex-[80%]">
+                <div className="flex items-center flex-[16%] gap-3 relative z-50 py-3">
+                    <span className={`h-2 w-2 rounded-full bg-[#292929]`}></span>
+                    <p className={`text-sm leading-4 tracking-[-0.01em] text-[#131313]`}>FAQ</p>
+                </div>
+                    <div className="flex flex-col flex-[84%]">
                         <div className="flex justify-between items-start lg:items-center flex-col lg:flex-row gap-4 lg:gap-0">
-                            <h1 className="text-3xl leading-8 text-[#292929] tracking-[-0.14px]">Have questions?
+                            <h1 className="text-5xl lg:text-[28px] leading-12 lg:leading-[32px] text-black tracking-[-0.9px]">Have questions?
                             <b className="text-[rgba(4,3,1,0.41)] block font-normal">Find answers.</b></h1>
                             <div className="flex flex-col gap-3 lg:items-end">
-                                <small className="text-[rgba(4,3,1,0.41)] text-sm leading-4">Any more questions?</small>
-                                <Link to="#" className="flex items-center gap-2 relative"><p className="text-sm text-black leading-4 relative">Talk to Sales <span className="absolute left-0 top-full bg-[rgba(0,0,0,0.11)] h-0.5 w-full"></span></p> <img src="/images/arow-top-right.svg" alt="Top right Curve Arrow" /></Link>
+                                <small className="text-[rgba(4,3,1,0.41)] text-[13.45px] leading-4 tracking-[-0.14px]">Any more questions?</small>
+                                <Link to="#" className="flex items-center gap-2 relative"><p className="text-[13.45px] leading-4 tracking-[-0.14px] text-black relative">Talk to Sales <span className="absolute left-0 top-full bg-[rgba(0,0,0,0.11)] h-0.5 w-full"></span></p> <img src="/images/arow-top-right.svg" alt="Top right Curve Arrow" /></Link>
                             </div>
                         </div>
                         <div className="mt-9">
@@ -35,7 +35,7 @@ function FAQ() {
                                     className="flex justify-between items-center w-full text-left cursor-pointer"
                                     onClick={() => toggleAccordion(index)}
                                 >
-                                    <h3 className="text-lg leading-5 font-medium text-[#292929]0">
+                                    <h3 className="text-[17.16px] leading-5 font-medium text-[#292929] tracking-[-0.36px]">
                                     {faq.question}
                                     </h3>
                                     <span className="ml-4 flex-shrink-0">
