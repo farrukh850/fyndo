@@ -3,14 +3,14 @@ import Header from "./Header";
 import Footer from "./Footer";
 import "../../assets/css/main.css";
 
-const Layout = () => {
+const Layout = ({ children, showHeader = true, showFooter = true }) => {
   return (
     <div className="layout">
-      <Header />
+      {showHeader && <Header />}
       <main className="main-content mt-[60px]">
         <Outlet />
       </main>
-      <Footer />
+      {showFooter && <Footer />}
     </div>
   );
 };

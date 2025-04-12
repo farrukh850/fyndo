@@ -40,7 +40,7 @@ const Header = () => {
           <NavLink to="/" className="text-sm text-white/60 tracking-[-0.14px]" > Fyndo</NavLink>
           <NavLink to="/" className="text-sm text-white/60 tracking-[-0.14px]" > FaQ</NavLink>
           <NavLink to="/" className="text-sm text-white/60 tracking-[-0.14px]" > Support</NavLink>
-          <Link className="w-[114px] h-[36px] rounded-[160px] bg-white cursor-pointer flex items-center justify-center"><p className="text-sm text-[#292929]">Pick a Plan</p></Link>
+          <Link to="/plan" className="w-[114px] h-[36px] rounded-[160px] bg-white cursor-pointer flex items-center justify-center"><p className="text-sm text-[#292929]">Pick a Plan</p></Link>
         </div>
 
         {/* Mobile Hamburger Button */}
