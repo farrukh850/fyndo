@@ -3,13 +3,13 @@ function Banner() {
   return (
     <>
         <div className="container font-stk">
-            <div className="flex flex-col lg:flex-row gap-5 lg:gap-2.5 items-start py-30">
+            <div className="flex flex-col lg:flex-row gap-5 lg:gap-2.5 items-start py-[60px] lg:py-30">
                 <div className="flex items-center flex-[16%] gap-3 relative z-50 py-3">
                     <span className={`h-2 w-2 rounded-full bg-[#292929]`}></span>
                     <p className={`text-sm leading-4 tracking-[-0.01em] text-[#131313]`}>Meet Fyndo</p>
                 </div>
                 <div className="flex flex-col gap-20 flex-[84%]">
-                    <h1 className="text-5xl lg:text-[60px] leading-12 lg:leading-[60px] text-[#131313] tracking-[-2.4px]">50% of IT Projects Crash and Burn.
+                    <h1 className="text-5xl lg:text-[60px] leading-12 lg:leading-[60px] text-[#131313] tracking-[-0.03em] lg:tracking-[-2.4px] ">50% of IT Projects Crash and Burn.
                     <b className="text-[rgba(4,3,1,0.41)] block font-normal">From Chaos to Control with Fyndo.</b></h1>
                     <div className="">
                         <div className="flex items-center gap-2 pb-2">

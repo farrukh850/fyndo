@@ -511,11 +511,11 @@ const MultiStepForm = () => {
             </button>
           </div>
         </div>
-        <div className="flex-1 xl:flex-[35%] w-full min-h-screen relative">
+        <div className="flex-1 xl:flex-[35%] w-full h-full min-h-[500px] xl:min-h-screen relative">
         {currentStep === 5 ? (
           // Content to show for step 5 (payment completion)
-          <div className="flex flex-col items-stretch justify-center bg-[#212121] absolute right-0 top-0 bottom-0 left-0 h-full w-full">
-            <div className="max-w-[401px] w-full ml-[85px]">
+          <div className="flex flex-col items-start xl:items-stretch justify-center bg-[#212121] absolute right-0 top-0 bottom-0 left-0 h-full w-full">
+            <div className="max-w-[401px] w-full xl:ml-[85px] px-5 xl:px-0">
               <p className="textsm text-white leading-4.5">Estimation Package</p>
               <div className="flex flex-col gap-2 py-8">
                 <p className="text-base leading-[100%] text-[rgba(255,255,255,0.8)]">72 hours delivery</p>
