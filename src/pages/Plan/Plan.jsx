@@ -470,7 +470,7 @@ const MultiStepForm = () => {
         </div>
       </header>
 
-      <div className="flex items-start justify-between h-auto min-h-[calc(100vh-60px)] mt-[60px] font-stk">
+      <div className="flex items-stretch justify-between h-auto min-h-[calc(100vh-60px)] mt-[60px] font-stk">
         <div className="flex-[65%] pb-10">
           {renderStepContent()}
           <div className="max-w-[706px] mx-auto mt-8 flex gap-4">
@@ -503,10 +503,10 @@ const MultiStepForm = () => {
             </button>
           </div>
         </div>
-        <div className="flex-[35%] w-full min-h-screen">
+        <div className="flex-[35%] w-full min-h-screen relative">
         {currentStep === 5 ? (
           // Content to show for step 5 (payment completion)
-          <div className="flex flex-col items-start h-screen justify-center bg-[#212121]">
+          <div className="flex flex-col items-stretch justify-center bg-[#212121] absolute right-0 top-0 bottom-0 left-0 h-full w-full">
             <div className="max-w-[401px] w-full ml-[85px]">
               <p className="textsm text-white leading-4.5">Estimation Package</p>
               <div className="flex flex-col gap-2 py-8">
