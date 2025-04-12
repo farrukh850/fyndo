@@ -94,18 +94,18 @@ const MultiStepForm = () => {
     switch (currentStep) {
       case 1:
         return (
-          <div className="flex flex-col max-w-[706px] mx-auto pt-[142px]">
-            <h1 className="text-[57.07px] leading-[60px] tracking-[-2.4px] text-[rgba(20,20,19,0.9)]">
+          <div className="max-w-[706px] mx-auto xl:pt-[142px] pt-10 px-5 xl:px-0">
+            <h1 className="text-3xl xl:text-[57.07px] leading-10 xl:leading-[60px] tracking-[-2.4px] text-[rgba(20,20,19,0.9)]">
               Simple Pricing—<br />Select One Package or Both.
             </h1>
-            <div className="flex items-center gap-2 mt-12">
+            <div className="flex items-center gap-2 xl:mt-12 mt-8">
               <p className="text-[13.34px] tracking-[-0.14px] leading-4 text-black">Pick a package—need help? </p>
               <Link className="text-[13.34px] tracking-[-0.14px] leading-4 text-black relative">
                 Talk to Sales for Details<span className="absolute left-0 top-full bg-[rgba(0,0,0,0.11)] h-0.5 w-full"></span>
               </Link>
               <img src="/images/arow-top-right.svg" alt="Arrow Top Right" />
             </div>
-            <div className="mt-[76px]">
+            <div className="mt-8 xl:mt-[76px]">
               <div 
                 className="flex items-center gap-3.5 p-3 bg-white border border-[#E5E7EB] rounded-lg cursor-pointer"
                 onClick={() => handleOptionChange('estimation')}
@@ -131,9 +131,9 @@ const MultiStepForm = () => {
                   <p className="text-[rgba(20,20,19,0.9)] text-xs leading-5">Estimation Package - € 599</p>
                   <div className="flex items-center gap-2">
                     <p className="text-[#6B7280] text-xs leading-5">72 hours delivery</p>
-                    <span className="h-0.5 w-0.5 bg-[#6B7280] rounded-full"></span>
+                    <span className="h-0.5 w-0.5 bg-[#6B7280] rounded-full hidden xl:visible"></span>
                     <p className="text-[#6B7280] text-xs leading-5">CTO & Tech Lead Approved</p>
-                    <span className="h-0.5 w-0.5 bg-[#6B7280] rounded-full"></span>
+                    <span className="h-0.5 w-0.5 bg-[#6B7280] rounded-full hidden xl:visible"></span>
                     <p className="text-[#6B7280] text-xs leading-5">Get a Detailed PDF</p>
                   </div>
                 </div>
@@ -170,9 +170,9 @@ const MultiStepForm = () => {
           </div>
         );
       case 2:
-        return <div className="max-w-[706px] mx-auto pt-[142px]">
-          <h1 className="text-[57.07px] leading-[60px] tracking-[-2.4px] text-[rgba(20,20,19,0.9)]">We'd love to hear about your project, and where things currently stand.</h1>
-          <div className="flex flex-col gap-1.5 mt-[71px]">
+        return <div className="max-w-[706px] mx-auto xl:pt-[142px] pt-10 px-5 xl:px-0">
+          <h1 className="text-3xl xl:text-[57.07px] leading-10 xl:leading-[60px] tracking-[-2.4px] text-[rgba(20,20,19,0.9)]">We'd love to hear about your project, and where things currently stand.</h1>
+          <div className="flex flex-col gap-1.5 xl:mt-[71px] mt-8">
             <p className="text-xs leading-5 text-[rgba(20,20,19,0.9)]">Project Title</p>
             <p className="text-xs leading-5 text-[#6B7280]">Keep your product title short and clear. Aim for 50–60 characters.</p>
             <div className="p-3 bg-[#FBFBFB] border border-[#E5E7EB] rounded-lg mt-4">
@@ -193,9 +193,9 @@ const MultiStepForm = () => {
           </div>
         </div>;
       case 3:
-        return <div className="max-w-[706px] mx-auto pt-[142px]">
-          <h1 className="text-[57.07px] leading-[60px] tracking-[-2.4px] text-[rgba(20,20,19,0.9)]">Sharing your documents helps us better understand your vision.</h1>
-          <div className="flex flex-col gap-1.5 mt-[91px]">
+        return <div className="max-w-[706px] mx-auto xl:pt-[142px] pt-10 px-5 xl:px-0">
+          <h1 className="text-3xl xl:text-[57.07px] leading-10 xl:leading-[60px] tracking-[-2.4px] text-[rgba(20,20,19,0.9)]">Sharing your documents helps us better understand your vision.</h1>
+          <div className="flex flex-col gap-1.5 xl:mt-[91px] mt-8">
             <p className="text-xs leading-5 text-[rgba(20,20,19,0.9)]">Upload Files</p>
             <p className="text-xs leading-5 text-[#6B7280]">Upload PDFs and screenshots to share more details—this helps us better understand your project and vision.</p>
           </div>
@@ -249,10 +249,10 @@ const MultiStepForm = () => {
           </div>
         </div>;
       case 4:
-        return <div className="max-w-[706px] mx-auto pt-[142px]">
-          <h1 className="text-[57.07px] leading-[60px] tracking-[-2.4px] text-[rgba(20,20,19,0.9)]">What is your intended use case or current application?</h1>
+        return <div className="max-w-[706px] mx-auto xl:pt-[142px] pt-10 px-5 xl:px-0">
+          <h1 className="text-3xl xl:text-[57.07px] leading-10 xl:leading-[60px] tracking-[-2.4px] text-[rgba(20,20,19,0.9)]">What is your intended use case or current application?</h1>
             <div 
-              className="flex items-center gap-3.5 px-3 py-[22px] bg-white border border-[#E5E7EB] rounded-lg cursor-pointer mt-[60px]"
+              className="flex items-center gap-3.5 px-3 py-[22px] bg-white border border-[#E5E7EB] rounded-lg cursor-pointer xl:mt-[60px] mt-8"
               onClick={() => handleOptionChange('use-case-1')}
             >
               <div className="relative">
@@ -378,8 +378,8 @@ const MultiStepForm = () => {
             </div>
         </div>;
       case 5:
-      return <div className="max-w-[706px] mx-auto pt-[142px]">
-        <h1 className="text-[57.07px] leading-[60px] tracking-[-2.4px] text-[rgba(20,20,19,0.9)]">Final step—Complete the payment and let’s get started.</h1>
+      return <div className="max-w-[706px] mx-auto xl:pt-[142px] pt-10 px-5 xl:px-0">
+        <h1 className="text-3xl xl:text-[57.07px] leading-10 xl:leading-[60px] tracking-[-2.4px] text-[rgba(20,20,19,0.9)]">Final step—Complete the payment and let’s get started.</h1>
         <div className="flex flex-col mt-[50px] gap-[30px]">
           <p className="text-base text-[#666666]">Contact information</p>
           <span className="text-sm leading-5 text-[#333333] p-3 rounded-md bg-[#F7F7F7] border border-[#E7EAEB]"><b className="text-[#4D4D4D] pr-3">Email</b>00Chukwudaniel@gmail.com</span>
@@ -431,10 +431,10 @@ const MultiStepForm = () => {
         </div>
       </div>;
       case 6:
-      return <div className="max-w-[706px] mx-auto pt-[142px]">
-      <h1 className="text-[57.07px] leading-[60px] tracking-[-2.4px] text-[rgba(20,20,19,0.9)]">Tada! Payment completed successfully. Your Project Number is #1221. </h1>
-      <small className="text-xs text-[rgba(20,20,19,0.9)] leading-5 mt-12 block">We'll get back to you via your email address shortly.</small>
-      <div className="flex flex-col mt-[35px] gap-[30px]">
+      return <div className="max-w-[706px] mx-auto xl:pt-[142px] pt-10 px-5 xl:px-0">
+      <h1 className="text-3xl xl:text-[57.07px] leading-10 xl:leading-[60px] tracking-[-2.4px] text-[rgba(20,20,19,0.9)]">Tada! Payment completed successfully. Your Project Number is #1221. </h1>
+      <small className="text-xs text-[rgba(20,20,19,0.9)] leading-5 xl:mt-12 mt-8 block">We'll get back to you via your email address shortly.</small>
+      <div className="flex flex-col xl:mt-[35px] mt-8 gap-[30px]">
         <p className="text-base text-[#666666]">Contact information</p>
         <span className="text-sm leading-5 text-[#333333] p-3 rounded-md bg-[#F7F7F7] border border-[#E7EAEB]"><b className="text-[#4D4D4D] pr-3">Email</b>00Chukwudaniel@gmail.com</span>
       </div>
@@ -446,19 +446,22 @@ const MultiStepForm = () => {
 
   return (
     <>
-      <header className={`header h-[60px] fixed top-0 right-0 left-0 flex items-center px-5 w-full bg-[#191919] border-b border-[#191919] font-stk z-[1000]`}>
-        <div className="container flex items-center gap-[243px]">
-          <Link to="/">
-            <img src="/images/logo.svg" className="w-14" alt="LEAP Logo" />
+      <header className={`header h-[60px] fixed top-0 right-0 left-0 flex items-center px-4 w-full bg-[#191919] border-b border-[#191919] font-stk z-[1000]`}>
+        <div className="w-full flex items-center justify-between">
+          {/* Logo - Always visible */}
+          <Link to="/" className="w-14 shrink-0">
+            <img src="/images/logo.svg" className="w-full" alt="LEAP Logo" />
           </Link>
-          <div className="flex items-center gap-[46px]">
+
+          {/* Steps - Hidden on mobile, visible on md+ screens */}
+          <div className="hidden md:flex items-center overflow-x-auto gap-2 lg:gap-4 xl:gap-[46px]">
             {steps.map((step, index) => (
-              <div key={step.id} className="flex items-center gap-[46px]">
-               {index > 0 && index < steps.length - 1 && (
-                  <span className={`w-[23px] h-[1px] ${currentStep >= step.id ? 'bg-white' : 'bg-[#C5C5C5]'}`}></span>
+              <div key={step.id} className="flex items-center gap-2 lg:gap-4 xl:gap-[46px]">
+                {index > 0 && index < steps.length - 1 && (
+                  <span className={`w-4 lg:w-[23px] h-[1px] ${currentStep >= step.id ? 'bg-white' : 'bg-[#C5C5C5]'}`}></span>
                 )}
                 <p 
-                  className={`text-[13.45px] tracking-[-0.14px] leading-4 ${
+                  className={`text-xs md:text-[13.45px] tracking-[-0.14px] leading-4 whitespace-nowrap ${
                     currentStep >= step.id ? 'text-white' : 'text-[rgba(255,255,250,0.6)]'
                   }`}
                 >
@@ -467,13 +470,18 @@ const MultiStepForm = () => {
               </div>
             ))}
           </div>
+
+          {/* Mobile Step Indicator - Visible only on mobile */}
+          <div className="md:hidden text-white text-sm">
+            Step {currentStep} of {steps.length}
+          </div>
         </div>
       </header>
 
-      <div className="flex items-stretch justify-between h-auto min-h-[calc(100vh-60px)] mt-[60px] font-stk">
-        <div className="flex-[65%] pb-10">
+      <div className="flex xl:flex-row flex-col items-stretch justify-between h-auto min-h-[calc(100vh-60px)] mt-[60px] font-stk">
+        <div className="flex-1 xl:flex-[65%] pb-10">
           {renderStepContent()}
-          <div className="max-w-[706px] mx-auto mt-8 flex gap-4">
+          <div className="max-w-[706px] mx-auto mt-8 flex gap-4 px-5 xl:px-0">
             {currentStep > 1 && (
               <button 
                 onClick={handleBack}
@@ -503,7 +511,7 @@ const MultiStepForm = () => {
             </button>
           </div>
         </div>
-        <div className="flex-[35%] w-full min-h-screen relative">
+        <div className="flex-1 xl:flex-[35%] w-full min-h-screen relative">
         {currentStep === 5 ? (
           // Content to show for step 5 (payment completion)
           <div className="flex flex-col items-stretch justify-center bg-[#212121] absolute right-0 top-0 bottom-0 left-0 h-full w-full">
