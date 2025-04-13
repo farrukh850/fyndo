@@ -1,7 +1,50 @@
-import { useCallback, useState } from "react";
+import { useCallback, useState, useRef, useEffect  } from "react";
 import { Link, useNavigate  } from "react-router-dom";
 
 const MultiStepForm = () => {
+  const videoRef = useRef(null);
+    const [isPlaying, setIsPlaying] = useState(false);
+    useEffect(() => {
+      const attemptPlay = () => {
+        const video = videoRef.current;
+        if (!video) return;
+        
+        // Ensure video is muted (Firefox requirement)
+        video.muted = true;
+        
+        const playPromise = video.play();
+        
+        if (playPromise !== undefined) {
+          playPromise
+            .then(() => setIsPlaying(true))
+            .catch(error => {
+              console.log("Autoplay prevented:", error);
+              // Fallback: show play button and let user initiate playback
+              setIsPlaying(false);
+            });
+        }
+      };
+    
+      // Add event listener for when Firefox might allow playback
+      videoRef.current?.addEventListener('canplaythrough', attemptPlay);
+      
+      attemptPlay();
+      
+      return () => {
+        videoRef.current?.removeEventListener('canplaythrough', attemptPlay);
+      };
+    }, []);
+  
+    const togglePlayPause = () => {
+      if (videoRef.current) {
+        if (isPlaying) {
+          videoRef.current.pause();
+        } else {
+          videoRef.current.play();
+        }
+        setIsPlaying(!isPlaying);
+      }
+    };
   const [currentStep, setCurrentStep] = useState(1);
   const [selectedOption, setSelectedOption] = useState('');
   const [isDragging, setIsDragging] = useState(false);
@@ -382,13 +425,13 @@ const MultiStepForm = () => {
         <h1 className="text-3xl xl:text-[57.07px] leading-10 xl:leading-[60px] tracking-[-2.4px] text-[rgba(20,20,19,0.9)]">Final step—Complete the payment and let’s get started.</h1>
         <div className="flex flex-col mt-[50px] gap-[30px]">
           <p className="text-base text-[#666666]">Contact information</p>
-          <span className="text-sm leading-5 text-[#333333] p-3 rounded-md bg-[#F7F7F7] border border-[#E7EAEB]"><b className="text-[#4D4D4D] pr-3">Email</b>00Chukwudaniel@gmail.com</span>
+          <span className="text-sm leading-5 text-[#333333] p-3 rounded-md bg-[#F7F7F7] border border-[#E7EAEB]"><b className="text-[#4D4D4D] pr-3">Email</b><input type="text" placeholder="00Chukwudaniel@gmail.com" className="text-sm leading-5 text-[#333333] placeholder:text-[#333333] focus:outline-none" /></span>
         </div>
         <div className="flex flex-col mt-[30px]">
           <p className="text-base text-[#333333] mb-[15px]">Payment method</p>
           <p className="text-sm text-[#666666] leading-5 mb-1">Card information</p>
           <div className="relative">
-            <input type="text" placeholder="Enter text" className="rounded-tr-md  rounded-tl-md ps-4 text-sm placeholder:text-[rgba(0,0,0,0.5)] border border-[#E7EAEB] bg-white h-[34px] w-full focus:outline-none" />
+            <input type="text" placeholder="Enter text" className="rounded-tr-md border-b-0  rounded-tl-md ps-4 text-sm placeholder:text-[rgba(0,0,0,0.5)] border border-[#E7EAEB] bg-white h-[34px] w-full focus:outline-none" />
             <img src="/images/debit-cards.svg" className="absolute top-1/2 -translate-y-1/2 right-4" alt="Debit Cards" />
           </div>
           <div className="flex items center justify-between">
@@ -403,23 +446,23 @@ const MultiStepForm = () => {
         </div>
         <div className="flex flex-col mt-[30px]">
           <p className="text-sm text-[#666666] leading-5 mb-1">Cardholder name</p>
-          <input type="text" placeholder="Full name on card" className="ps-4 rounded-bl-md text-sm placeholder:text-[rgba(0,0,0,0.5)] border border-[#E7EAEB] bg-white h-[34px] w-full focus:outline-none" />
+          <input type="text" placeholder="Full name on card" className="ps-4 rounded-md text-sm placeholder:text-[rgba(0,0,0,0.5)] border border-[#E7EAEB] bg-white h-[34px] w-full focus:outline-none" />
         </div>
         <div className="flex flex-col mt-[30px]">
           <p className="text-sm text-[#666666] leading-5 mb-1">Country or region</p>
-          <select name="country" id="country" className="ps-4 rounded-tl-md  rounded-tr-md text-sm text-[#333333] border border-[#E7EAEB] bg-white h-[34px] w-full focus:outline-none">
+          <select name="country" id="country" className="ps-4 rounded-tl-md  border-b-0 rounded-tr-md text-sm text-[#333333] border border-[#E7EAEB] bg-white h-[34px] w-full focus:outline-none">
             <option value="Nigeria">Nigeria</option>
             <option value="Nigeria">United States</option>
             <option value="Nigeria">Autralia</option>
             <option value="Nigeria">Africa</option>
           </select>
-          <input type="text" placeholder="Address line 2" className="ps-4 text-sm placeholder:text-[rgba(0,0,0,0.5)] border border-[#E7EAEB] bg-white h-[34px] w-full focus:outline-none" />
+          <input type="text" placeholder="Address line 2" className="ps-4 border-b-0 text-sm placeholder:text-[rgba(0,0,0,0.5)] border border-[#E7EAEB] bg-white h-[34px] w-full focus:outline-none" />
           <div className="flex items center justify-between">
             <div className="relative flex-1">
-              <input type="text" placeholder="City" className="ps-4 text-sm placeholder:text-[rgba(0,0,0,0.5)] border border-[#E7EAEB] bg-white h-[34px] w-full focus:outline-none" />
+              <input type="text" placeholder="City" className="ps-4 text-sm border-b-0 border-r-0 placeholder:text-[rgba(0,0,0,0.5)] border border-[#E7EAEB] bg-white h-[34px] w-full focus:outline-none" />
             </div>
             <div className="relative flex-1">
-              <input type="text" placeholder="Postal code" className="ps-4 text-sm placeholder:text-[rgba(0,0,0,0.5)] border border-[#E7EAEB] bg-white h-[34px] w-full focus:outline-none" />
+              <input type="text" placeholder="Postal code" className="ps-4 text-sm placeholder:text-[rgba(0,0,0,0.5)] border border-[#E7EAEB] border-b-0 bg-white h-[34px] w-full focus:outline-none" />
             </div>
           </div>
           <select name="country" id="country" className="ps-4 rounded-bl-md rounded-br-md text-sm text-[rgba(0,0,0,0.5)] border border-[#E7EAEB] bg-white h-[34px] w-full focus:outline-none">
@@ -454,7 +497,7 @@ const MultiStepForm = () => {
           </Link>
 
           {/* Steps - Hidden on mobile, visible on md+ screens */}
-          <div className="hidden md:flex items-center overflow-x-auto gap-2 lg:gap-4 xl:gap-[46px]">
+          <div className="hidden md:flex items-center gap-2 lg:gap-4 xl:gap-[46px]">
             {steps.map((step, index) => (
               <div key={step.id} className="flex items-center gap-2 lg:gap-4 xl:gap-[46px]">
                 {index > 0 && index < steps.length - 1 && (
@@ -478,8 +521,8 @@ const MultiStepForm = () => {
         </div>
       </header>
 
-      <div className="flex xl:flex-row flex-col items-stretch justify-between h-auto min-h-[calc(100vh-60px)] mt-[60px] font-stk">
-        <div className="flex-1 xl:flex-[65%] pb-10">
+      <div className="flex xl:flex-row flex-col items-stretch justify-between h-auto max-h-[calc(100vh-60px)] mt-[60px] font-stk">
+        <div className="flex-1 xl:flex-[65%] overflow-y-auto max-h-[calc(100vh-60px)] pb-10">
           {renderStepContent()}
           <div className="max-w-[706px] mx-auto mt-8 flex gap-4 px-5 xl:px-0">
             {currentStep > 1 && (
@@ -511,10 +554,10 @@ const MultiStepForm = () => {
             </button>
           </div>
         </div>
-        <div className="flex-1 xl:flex-[35%] w-full h-full min-h-[500px] xl:min-h-screen relative">
+        <div className="flex-1 hidden lg:block xl:flex-[35%] overflow-hidden w-full h-full min-h-[calc(100vh-60px)] xl:max-h-[calc(100vh-60px)] relative">
         {currentStep === 5 ? (
           // Content to show for step 5 (payment completion)
-          <div className="flex flex-col items-start xl:items-stretch justify-center bg-[#212121] absolute right-0 top-0 bottom-0 left-0 h-full w-full">
+          <div className="flex flex-col items-start xl:items-stretch justify-center bg-[#212121] absolute right-0 top-0 bottom-0 left-0 h-full w-full xl:max-h-[calc(100vh-60px)]">
             <div className="max-w-[401px] w-full xl:ml-[85px] px-5 xl:px-0">
               <p className="textsm text-white leading-4.5">Estimation Package</p>
               <div className="flex flex-col gap-2 py-8">
@@ -542,11 +585,41 @@ const MultiStepForm = () => {
           </div>
           ) : (
             // Default content for other steps
-            <img 
-              src="/images/form-image.png" 
-              className="w-full h-full object-cover object-top" 
-              alt="Man Standing" 
-            />
+            // <img 
+            //   src="/images/form-image.png" 
+            //   className="w-full h-full object-cover object-top" 
+            //   alt="Man Standing" 
+            // />
+            <div className="absolute inset-0 flex flex-col bg-[#212121] h-[calc(100vh-60px)]">
+              <div className="relative flex-1 w-full">
+                {/* Video Element */}
+                  <video
+                      ref={videoRef}
+                      className="absolute inset-0 w-full h-full object-cover"
+                      autoPlay
+                      muted
+                      playsInline
+                      loop
+                      controls={false}
+                      >
+                      <source src="/videos/v7.mp4" type="video/mp4" />
+                      <source src="/videos/v7.webm" type="video/webm" /> {/* Add WebM version as fallback */}
+                  </video>
+                  {/* Play/Pause Button (Bottom Right) */}
+                  <button
+                    onClick={togglePlayPause}
+                    className="absolute bottom-[74px] right-[53px] bg-white  rounded-full h-12 w-12 flex items-center justify-center transition-colors z-50 cursor-pointer"
+                    aria-label={isPlaying ? "Pause" : "Play"}
+                  >
+                    {isPlaying ? (
+                      
+                        <img src="/images/pause.svg" className="w-5" alt="" />
+                    ) : (
+                        <img src="/images/play-btn.svg" className="w-3" alt="" />
+                    )}
+                  </button>
+              </div>
+            </div>
           )}
         </div>
       </div>
