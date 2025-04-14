@@ -10,7 +10,7 @@ function CommonVideoSection({ id, packageName, deliveryTime, videoMainHeading, v
                     <Video videoSrc={videoSrc} duration="506"
                     />
                 </div>
-                <div className="p-5 lg:p-[52px] pl-0 w-full h-full flex flex-col justify-between items-start z-50 relative">
+                <div className="p-5 lg:p-[52px] lg:ps-0 w-full h-full flex flex-col justify-between items-start z-50 relative">
                     <div className="flex items-center gap-3 pt-4 relative">
                         <span className={`h-2 w-2 rounded-full bg-white`}></span>
                         <p className={`text-sm leading-3.5 text-white font-stk-book`}>{packageName}</p>
