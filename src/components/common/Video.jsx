@@ -52,7 +52,7 @@ function Video({ videoSrc, duration  }) {
   };
 
   return (
-    <div className="relative w-full h-full">
+    <div className="w-full h-full">
       {/* Video Element */}
         <video
             ref={videoRef}
@@ -70,7 +70,7 @@ function Video({ videoSrc, duration  }) {
       {/* Play/Pause Button (Bottom Right) */}
       <button
         onClick={togglePlayPause}
-        className="absolute bottom-[74px] right-[53px] bg-white  rounded-full h-12 w-12 flex items-center justify-center transition-colors z-50 cursor-pointer"
+        className="absolute bottom-[74px] right-[53px] bg-white  rounded-full h-12 w-12 flex items-center justify-center transition-colors z-[100] cursor-pointer"
         aria-label={isPlaying ? "Pause" : "Play"}
       >
         {isPlaying ? (
@@ -80,14 +80,14 @@ function Video({ videoSrc, duration  }) {
             <img src="/images/play-btn.svg" className="w-3" alt="" />
         )}
       </button>
-      {!isPlaying && (
+      {/* {!isPlaying && (
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
           <span className="flex items-center gap-2 bg-[#232323] text-white px-3 py-2 rounded-3xl backdrop-blur-[20px] shadow-[0px_4px_15px_0px_rgba(0,0,0,0.15)]">
             <img src="/images/play-btn-white.svg" className="w-1.5" alt="Play Button White" />
             <p className="text-xs text-white">{formatDuration(duration)}</p>
           </span>
         </div>
-      )}
+      )} */}
     </div>
   );
 }

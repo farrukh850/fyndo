@@ -6,6 +6,13 @@
     font-display: swap;
 }
 @font-face {
+    font-family: "STKBureau-Sans-Book";
+    src: url('/Fonts/STKBureau-Sans-Book.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
     font-family: 'Abaliss';
     src: url('/Fonts/Abaliss/Abaliss-Regular.woff') format('woff');
     font-weight: 400;
@@ -37,9 +44,15 @@
 .font-abaliss {
     font-family: 'Abaliss';
 }
+.font-stk-book {
+    font-family: "STKBureau-Sans-Book";
+}
 .container{
     max-width: 1336px;
     margin: 0 auto;
+}
+html{
+    scroll-padding-top: 60px; /* This creates offset for all scroll targets */
 }
 @media (max-width: 992px)  {
     .container{

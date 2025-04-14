@@ -9,7 +9,7 @@ function FAQ() {
         setActiveIndex(activeIndex === index ? null : index);
     };
   return (
-    <div className="py-28">
+    <div className="py-28" id="faq">
         <div className="container">
             <div className="flex items-start font-stk flex-col lg:flex-row gap-4 lg:gap-0">
                 <div className="flex items-center flex-[16%] gap-3 relative z-50 py-3">

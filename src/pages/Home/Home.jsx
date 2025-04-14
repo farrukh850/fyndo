@@ -15,14 +15,14 @@ const Home = () => {
   return (
     <div className="">
       <Banner />
-      <MeetFyndo smallHeading="Meet Fyndo" text="Fyndo helps non-technical businesses and investors prevent budget overruns, screening issues, and unrealistic estimates with clear, fixed-price packages." bigHeadingOne="49% Savings" subHeadingOne="Save 49% more money with Fyndo— avoid costly IT failures"  bigHeadingTwo="3x Faster" subHeadingTwo="Triple the speed, lower costs—Fyndo outperforms traditional IT services." bigHeadingthree="90% Reduction" subHeadingThree="Fyndo cuts IT failures 90% by eliminating jargon and paperwork."  videoSrc="/videos/v7.mp4"/>
+      <MeetFyndo id="meet-fyndo" smallHeading="Meet Fyndo" text="Fyndo helps non-technical businesses and investors prevent budget overruns, screening issues, and unrealistic estimates with clear, fixed-price packages." bigHeadingOne="49% Savings" subHeadingOne="Save 49% more money with Fyndo— avoid costly IT failures"  bigHeadingTwo="3x Faster" subHeadingTwo="Triple the speed, lower costs—Fyndo outperforms traditional IT services." bigHeadingthree="90% Reduction" subHeadingThree="Fyndo cuts IT failures 90% by eliminating jargon and paperwork."  videoSrc="/videos/v7-video5.mp4"/>
       <Quotation />
       {videoSections.map((section, index) => (
         <CommonVideoSection key={index} {...section} />
       ))}
       <HighLevelSecurity />
       <SpeedyService />
-      <MeetFyndo smallHeading="Fyndo" text="Fyndo’s 80+ member team is on a mission to help non-tech founders and investors decode the IT black box with transparency." bigHeadingOne="No bots, No AI—" subHeadingOne="80+ Fyndo Pros— Real Tech-Minds Working on Your Project"  bigHeadingTwo="Made in Europe" subHeadingTwo="Operating in Europe with hubs in Germany and Poland" bigHeadingthree="100+ Stacks" subHeadingThree="Many industries, many stacks—SaaS to e-commerce, we’ve got it." videoSrc="/videos/v7-video4.mp4" />
+      <MeetFyndo id="fyndo" smallHeading="Fyndo" text="Fyndo’s 80+ member team is on a mission to help non-tech founders and investors decode the IT black box with transparency." bigHeadingOne="No bots, No AI—" subHeadingOne="80+ Fyndo Pros— Real Tech-Minds Working on Your Project"  bigHeadingTwo="Made in Europe" subHeadingTwo="Operating in Europe with hubs in Germany and Poland" bigHeadingthree="100+ Stacks" subHeadingThree="Many industries, many stacks—SaaS to e-commerce, we’ve got it." videoSrc="/videos/v7-video4.mp4" />
       <FAQ />
       <InNumbers />
       <Support />
